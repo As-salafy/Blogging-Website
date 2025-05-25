@@ -1,0 +1,48 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Blogging Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-3xl mx-auto bg-white shadow-md p-6 rounded-lg">
+        <h1 class="text-3xl font-bold text-center mb-4">Enhanced Blogging Platform</h1>
+
+        <!-- Blog Post Form -->
+        <div id="createPost">
+            <h2 class="text-xl font-semibold mb-2">Create or Edit Post</h2>
+            <input id="postTitle" type="text" class="w-full p-2 border rounded mb-2" placeholder="Post Title">
+            <textarea id="postContent" class="w-full p-2 border rounded mb-2" placeholder="Post Content"></textarea>
+            <button onclick="addOrUpdatePost()" class="bg-blue-500 text-white px-4 py-2 rounded">Publish</button>
+            <button onclick="cancelEdit()" id="cancelEdit" class="hidden bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+        </div>
+
+        <!-- Blog Post List -->
+        <div id="blogPosts" class="mt-6">
+            <h2 class="text-xl font-semibold mb-2">Recent Posts</h2>
+            <div id="postList"></div>
+        </div>
+
+        <!-- Individual Post View -->
+        <div id="postView" class="hidden">
+            <button onclick="goBack()" class="bg-gray-300 px-3 py-1 rounded mb-4">⬅️ Back</button>
+            <h2 id="viewTitle" class="text-2xl font-bold"></h2>
+            <p id="viewContent" class="mt-2"></p>
+
+            <div class="mt-4">
+                <button onclick="likePost()" class="bg-green-500 text-white px-3 py-1 rounded">👍 Like <span id="likeCount">0</span></button>
+                <button onclick="dislikePost()" class="bg-red-500 text-white px-3 py-1 rounded">👎 Dislike <span id="dislikeCount">0</span></button>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-4">Comments</h3>
+            <div id="commentSection"></div>
+            <textarea id="commentInput" class="w-full p-2 border rounded mt-2" placeholder="Add a comment..."></textarea>
+            <button onclick="addComment()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Comment</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
